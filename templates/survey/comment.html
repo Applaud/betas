@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Comment?</title>
+  </head>
+  <body>
+    {% if errors  %}
+    <ul>
+      {% for e in errors %}
+      <li>{{ e }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <form action="/comment/" method="post">
+      <textarea name="q" rows="10" columns="30">Text goes here.</textarea>
+      <input type="Submit" value="Submit"/>
+    </form>
+  </body>
+</html>
