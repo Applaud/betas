@@ -1,0 +1,32 @@
+html, body {
+    background-color:rgb(159,53,32);
+}
+
+.data {
+    border: 2px solid black;
+    font-family:Verdana, Helvetica, sans-serif;
+    font-variant:normal;
+    font-size:13px;
+    background-color:#dddddd;
+/*    width:60%;*/
+    margin:20px auto 10px auto;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+table {
+    align:center;
+    margin-bottom:20px;
+    margin-top:20px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+th {
+    margin:10px auto 100px auto;
+}
+
+td {
+    text-align:left;
+    border:1px solid black;
+}
