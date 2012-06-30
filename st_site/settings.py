@@ -1,5 +1,6 @@
 # Django settings for st_site project.
 
+import os
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -11,14 +12,14 @@ ADMINS = (
 # run nicely on other machines -- all the rest of the information is (I think) relative
 # to this path.
 #CODE_PATH = '/home/sraza/slowtrain/'
-CODE_PATH = '/Users/peterfogg/Documents/src/Python/Applaud/'
+CODE_PATH = os.path.dirname(__file__) +"/../"
 
 MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': CODE_PATH + 'st_site/db_file',                      # Or path to database file if using sqlite3.
+        'NAME': CODE_PATH + '/st_site/db_file',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -138,6 +139,9 @@ INSTALLED_APPS = (
     'coffeand',
     'tahoekayak',
     'market',
+    'marina',
+    'watersport',
+    'eltoro',
 )
 
 # A sample logging configuration. The only tangible logging

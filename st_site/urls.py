@@ -11,6 +11,12 @@ import tahoekayak
 import tahoekayak.urls
 import market
 import market.urls
+import marina
+import marina.urls
+import watersport
+import watersport.urls
+import eltoro
+import eltoro.urls
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -19,6 +25,9 @@ urlpatterns = patterns('',
                        (r'^coffee&/', include(coffeand.urls)),
                        (r'^kayak/', include(tahoekayak.urls)),
                        (r'obexersmarket/', include(market.urls)),
+                       (r'obexersmarina/', include(marina.urls)),
+                       (r'obexersws/', include(watersport.urls)),
+                       (r'eltoro/', include(eltoro.urls)),
                        # (r'^results/$', results),
                        (r'^login/$', login),
                        (r'^thanks/', thanks),
