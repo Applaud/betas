@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/data_style.css" />
+    <title>Responses</title>
+  </head>
+  <body>
+    <div class="data">
+      <h1>Responses</h1>
+      <ul>
+	<li>Number of responses: {{ count }}</li>
+      </ul>
+      <table>
+	<tr>
+	  <th>Favorite part |</th>
+	  <th>Music preference | </th>
+	  <th>New oils |</th>
+	  <th>Would you extend your massage?</th>
+	</tr>
+	{% for survey in surveys %}
+	<tr>
+	  <td>{{ survey.fav_part }}>
+	  <td>{{ survey.music }}</td>
+	  <td>{{ survey.new_oils }}</td>
+	  <td>{{ survey.extend_choices }}</td>
+	</tr>
+	{% endfor %}
+      </table>
+    </div>
+  </body>
+</html

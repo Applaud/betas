@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/data_style.css" />
+    <title>Responses</title>
+  </head>
+  <body>
+    <div class="data">
+      <h1>Responses</h1>
+      <ul>
+	<li>Number of responses: {{ count }}</li>
+	<li>Average enjoyability rating: {{ avg_enjoyable }}</li>
+	<li>Average guide rating: {{ avg_guide }}</li>
+	<li>Average booking rating: {{ avg_booking }}</li>
+	<li>Average transport rating: {{ avg_transport }}</li>
+      </ul>
+      <table>
+	<tr>
+	  <th>Memory </th>
+	  <th>Enjoyability </th>
+	  <th>Guide  </th>
+	  <th>Booking </th>
+	  <th>Transport </th>
+	  <th>Comments</th>
+	</tr>
+	{% for survey in surveys %}
+	<tr>
+	  <td>{{ survey.favorite }}</td>
+	  <td>{{ survey.enjoyable }}</td>
+	  <td>{{ survey.guide }}</td>
+	  <td>{{ survey.booking }}</td>
+	  <td>{{ survey.transport }}</td>
+	  <td>{{ survey.comments }}</td>
+	</tr>
+	{% endfor %}
+      </table>
+    </div>
+  </body>
+</html

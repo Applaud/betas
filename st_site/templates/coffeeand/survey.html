@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link rel="stylesheet" href="{{ STATIC_URL }}/coffeeandstyle.css" type="text/css" />
+    <title>Coffee&</title>
+  </head>
+  <body>
+    <div class="coffeeandstyle">
+      <img src="{{ STATIC_URL }}/coffeeandlogo.png" alt="logo" />
+      <p>We would love your feedback! <br />
+	Please take a minute to answer these questions.</p>
+      {% if errors %}
+      <br />
+      <strong>Whoops! It looks like you didn't answer some of these questions.</strong>
+      {% endif %}
+      <form action="" method="post">
+	<div class="field">
+	  <label for="id_service">How was the service?</label>
+	  {% for radio in form.service %}
+	  <div class="radio">
+	    {{ radio }}
+	  </div>
+	  {% endfor %}
+	</div>
+	<div class="field">
+	  <label for="id_service_comment">Comments</label><br />
+	  {{ form.service_comment }}
+	</div>
+	<div class="field">
+	  <label for="id_eggs">We are considering serving eggs benedict.</label><br />
+	  {{ form.eggs }}
+	</div>
+	<div class="field">
+	  <label for="id_favorite">What is your favorite item on the menu?</label><br />
+	  {{ form.favorite }}
+e	</div>
+	<div class="field">
+	  <label for="id_different">Is there anything you wish we did differently?</label><br />
+	  {{ form.different }}
+	</div>
+	<div class="field">
+	  <label for="id_overall">How was your overall experience?</label>
+	  {% for radio in form.overall %}
+	  <div class="radio">
+	    {{ radio }}
+	  </div>
+	  {% endfor %}
+	</div>
+	<div class="field">
+	  <label for="id_overall_comment">Comments</label>
+	  {{ form.overall_comment }}
+	</div>
+	<input type="submit" value="Submit" class="button" />
+      </form>
+    </div>
+  </body>
+</html>

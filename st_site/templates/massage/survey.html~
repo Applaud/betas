@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link rel="stylesheet" href="{{ STATIC_URL }}/coffeeandstyle.css" type="text/css" />
+    <title>El Toro </title>
+  </head>
+  <body>
+<h1>El Toro </h1>
+   <form action="" method="post"> 
+    <div class="eltoro">
+      <label for="fav_part">What is your favourite part about getting a massage? </label> 
+      <br />
+      {{ form.fav_part }}
+      <br />
+      <label for="music"> What type of music would you like to hear during the massage? </label>
+      <br />
+      {{ form.music }}
+      <br />
+      <label for="new_oils"> Would you be interested in adding new oils to your massage? </label>
+      <br />
+      {{ form.new_oils }}
+      <br />
+      <label for="extend"> Would you be interested in extending your massage? </label>
+      <br />
+      {{ form.extend }}
+      <br />
+      <input type="submit" value="Submit" class="button" />
+      </div>
+      </form> 
+ </body>
+</html>

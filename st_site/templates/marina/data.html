@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/data_style.css" />
+    <title>Responses</title>
+  </head>
+  <body>
+    <div class="data">
+      <h1>Responses</h1>
+      <ul>
+	<li>Number of responses: {{ count }}</li>
+	<li>Average staff helpful rating: {{ avg_helpful }}</li>
+	<li>Average friendly rating: {{ avg_friendly }}</li>
+      </ul>
+      <table>
+	<tr>
+	  <th>Which service did you use? |</th>
+	  <th>Did you know we offer off-site storage in Nevada? |</th>
+	  <th>Did you visit our boat store?  | </th>
+	  <th>Was the staff helpful? |</th>
+	  <th>Was the staff friendly? |</th>
+	  <th>Anything you wish we carried?</th>
+	</tr>
+	{% for survey in surveys %}
+	<tr>
+	  <td>{{ survey.service }} </td>
+	  <td>{{ survey.storage }}</td>
+	  <td>{{ survey.boat }}</td>
+	  <td>{{ survey.helpful }}</td>
+	  <td>{{ survey.friendly }}</td>
+	  <td>{{ survey.wish }}</td>
+	</tr>
+	{% endfor %}
+      </table>
+    </div>
+  </body>
+</html

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/data_style.css" />
+    <title>Responses</title>
+  </head>
+  <body>
+    <div class="data">
+      <h1>Responses</h1>
+      <ul>
+	<li>Number of responses: {{ count }}</li>
+	<li>Average overall experience rating: {{ avg_experience }}</li>
+	<li>Average service rating: {{ avg_service }}</li>
+      </ul>
+      <table>
+	<tr>
+	  <th>Overall experience (rating) |</th>
+	  <th>Ice cream wish |</th>
+	  <th>Favorite flavor | </th>
+	  <th>Change one thing |</th>
+	  <th>Service (rating)</th>
+	</tr>
+	{% for survey in surveys %}
+	<tr>
+	  <td>{{ survey.overall_comments }} ({{ survey.overall }})</td>
+	  <td>{{ survey.flavor_wish }}</td>
+	  <td>{{ survey.fav_flav }}</td>
+	  <td>{{ survey.change }}</td>
+	  <td>{{ survey.service_comment }} ({{ survey.service }})</td>
+	</tr>
+	{% endfor %}
+      </table>
+    </div>
+  </body>
+</html

@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/login_style.css" />
+  <title>Login</title>
+</head>
+<body>
+  <div class="ststyle" id="login">
+    {% if error %}
+    <strong>Enter your username and password.</strong>
+    {% endif %}
+    <form action="" method="post">
+      <div class="field">
+	<label for="id_username">Username</label>
+	{{ form.username }}<br />
+      </div>
+      <div class="field">
+	<label for="id_password">Password</label>
+	{{ form.password }}
+      </div>
+      <input type="submit" value="Sign in" class="button" />
+    </form>
+  </div>
+</body>
+</html>

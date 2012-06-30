@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link rel="stylesheet" href="{{ STATIC_URL }}/coffeeandstyle.css" type="text/css" />
+    <title>Coffee&</title>
+  </head>
+  <body>
+    <div class="coffeeandstyle">
+      <!-- <img src="{{ STATIC_URL }}/coffeeandlogo.png" alt="logo" /> -->
+      <p>We would love your feedback! <br />
+	Please take a minute to answer these questions.</p>
+      {% if errors %}
+      <br />
+      <strong>Whoops! It looks like you didn't answer some of these questions.</strong>
+      {% endif %}
+      <form action="" method="post">
+	<div class="field">
+	  <label for="id_service">With us being a full service marina, which services did you use?</label>
+	  {% for radio in form.service %}
+	  <div class="radio">
+	    {{ radio }}
+	  </div>
+	  {% endfor %}
+	</div>
+	<div class="field">
+	  <label for="id_boat">During your trip to Obexer's did you visit our Boat Store?</label>
+	  {% for radio in form.boat %}
+	  <div class="radio">
+	    {{ radio }}
+	  </div>
+	  {% endfor %}
+	</div>
+ 	<div class="field">
+	  <label for="id_storage">Did you know we offer off-site storage in Nevada?</label>
+	  {% for radio in form.storage %}
+	  <div class="radio">
+	    {{ radio }}
+	  </div>
+	  {% endfor %}
+	</div>
+	<div class="field">
+	  <label for="id_helpful">How helpful was our staff?</label>
+	  {% for radio in form.helpful %}
+	  <div class="radio">
+	    {{ radio }}
+	  </div>
+	  {% endfor %}
+	</div>
+	<div class="field">
+	  <label for="id_friendly">How friendly was our staff?</label>
+	  {% for radio in form.friendly %}
+	  <div class="radio">
+	    {{ radio }}
+	  </div>
+	  {% endfor %}
+	</div>
+	<div class="field">
+	  <label for="id_wish">Are there any items you wish we carried?</label>
+	  {{ form.wish }}
+	</div>
+ 	<div class="field">
+	  <label for="id_general">General Comments</label>
+	  {{ form.general }}
+	</div>
+	<input type="submit" value="Submit" class="button" />
+      </form>
+    </div>
+  </body>
+</html>

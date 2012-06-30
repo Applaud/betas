@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link rel="stylesheet" href="{{ STATIC_URL }}/coffeeandstyle.css" type="text/css" />
+    <title>Obexer's Watersports </title>
+  </head>
+  <body>
+    <h1> Obexer's Watersports </h1>
+    <div class="coffeeandstyle">
+      <!-- <img src="{{ STATIC_URL }}/coffeeandlogo.png" alt="logo" /> -->
+      <p>We would love your feedback! <br />
+	Please take a minute to answer these questions.</p>
+      <form action="" method="post">
+	<div class="field">
+	  <label for="id_activity">What activity did you do?</label>
+	  <br />
+	  {% for radio in form.activity %}
+	  <div class="radio">
+	    {{ radio }}
+	  </div>
+	  {% endfor %}
+	</div>
+
+	<div class="field">
+	  <label for="id_friendly">How friendly was our staff?</label>
+	  <br />
+	  {% for radio in form.friendly %}
+	  <div class="radio">
+	    {{ radio }}
+	  </div>
+	  {% endfor %}
+	</div>
+
+
+	<div class="field">
+	  <label for="id_instruct">How well did they instruct you?</label>
+	  <br />
+	  {% for radio in form.instruct %}
+	  <div class="radio">
+	    {{ radio }}
+	  </div>
+	  {% endfor %}
+	</div>
+
+	<div class="field">
+	  <label for="id_equipment">How would you rate our equipment?</label>
+	  <br />
+	  {% for radio in form.equipment %}
+	  <div class="radio">
+	    {{ radio }}
+	  </div>
+	  {% endfor %}
+	</div>
+	
+	<div class="field">
+	  <label for="id_sale">Did you know that all of our equipment is for sale?</label>
+	  <br />
+	  {% for radio in form.sale %}
+	  <div class="radio">
+	    {{ radio }}
+	  </div>
+	  {% endfor %}
+	</div>
+	<input type="submit" value="Submit" class="button" />
+      </form>
+    </div>
+  </body>
+</html>
