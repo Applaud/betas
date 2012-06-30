@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from django.views.generic.simple import direct_to_template
 from survey.views import thanks, survey, results, login
 from testapp.views import send_surveys, receive_response, all_surveys, form_create, all_responses
 from django.contrib import admin
@@ -26,6 +27,7 @@ urlpatterns = patterns('',
                        (r'^buds/', include(buds.urls)),
                        (r'^coffee&/', include(coffeand.urls)),
                        (r'^kayak/', include(tahoekayak.urls)),
+                       (r'^obexers/', direct_to_template, {'template':'obexers.html'}),
                        (r'obexersmarket/', include(market.urls)),
                        (r'obexersmarina/', include(marina.urls)),
                        (r'obexersws/', include(watersport.urls)),
