@@ -17,6 +17,8 @@ import watersport
 import watersport.urls
 import eltoro
 import eltoro.urls
+import massage
+import massage.urls
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -28,6 +30,7 @@ urlpatterns = patterns('',
                        (r'obexersmarina/', include(marina.urls)),
                        (r'obexersws/', include(watersport.urls)),
                        (r'eltoro/', include(eltoro.urls)),
+                       (r'massage/', include(massage.urls)),
                        # (r'^results/$', results),
                        (r'^login/$', login),
                        (r'^thanks/', thanks),

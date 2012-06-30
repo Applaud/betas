@@ -142,6 +142,7 @@ INSTALLED_APPS = (
     'marina',
     'watersport',
     'eltoro',
+    'massage',
 )
 
 # A sample logging configuration. The only tangible logging
