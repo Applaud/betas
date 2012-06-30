@@ -21,11 +21,17 @@ def survey(request):
 
 def results(request):
     if not request.user.is_authenticated():
-        return HttpResponseRedirect('/coffeeand/')
+        return HttpResponseRedirect('/market/')
     surveys = MarketSurvey.objects.all()
-    avg_friendly = sum([s.friendly for s in surveys])/float(len(surveys))
-    avg_helpful = sum([s.helpful for s in surveys])/float(len(surveys))
-    return render_to_response('coffeeand/data.html',
+    if len(surveys) is not 0:
+        avg_friendly = sum([s.friendly for s in surveys])/float(len(surveys))
+        avg_helpful = sum([s.helpful for s in surveys])/float(len(surveys))
+        print "hello"
+    else:
+        print "goodbye"
+        avg_friendly = 0
+        avg_helpful = 0
+    return render_to_response('market/data.html',
                               {'surveys': surveys,
                                'count': len(surveys),
                                'avg_friendly': avg_friendly,

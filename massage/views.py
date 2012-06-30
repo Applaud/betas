@@ -24,8 +24,6 @@ def results(request):
     if not request.user.is_authenticated():
         return HttpResponseRedirect('/massage/')
     surveys = MassageSurvey.objects.all()
-    avg_experience = sum([s.overall for s in surveys])/float(len(surveys))
-    avg_service = sum([s.service for s in surveys])/float(len(surveys))
     return render_to_response('massage/data.html',
                               {'surveys': surveys,
                                'count': len(surveys)},
