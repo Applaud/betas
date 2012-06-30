@@ -1,0 +1,13 @@
+from django.db import models
+import django.forms as forms
+
+class MassageSurvey(models.Model):
+    fav_part = models.CharField(max_length=100)
+    music = models.CharField(max_length=100)
+    new_oils = models.CharField(max_length=100)
+    extend = models.CharField(max_length=500)
+
+class MassageSurveyForm(forms.ModelForm):
+    service_comments = forms.CharField(widget=forms.Textarea)
+    class Meta:
+        model = MassageSurvey

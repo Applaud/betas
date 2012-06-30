@@ -1,0 +1,32 @@
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+from massage.models import MassageSurvey, MassageSurveyForm
+
+def survey(request):
+    errors = False
+    if request.method == 'POST':
+        form = MassageSurveyForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/thanks')
+        else:
+            errors = True
+            print "errors"
+    else:
+        form = MassageSurveyForm()
+    return render_to_response('massage/survey.html',
+                              {'form': form,
+                               'errors': errors},
+                              context_instance=RequestContext(request))
+
+def results(request):
+    if not request.user.is_authenticated():
+        return HttpResponseRedirect('/massage/')
+    surveys = MassageSurvey.objects.all()
+    avg_experience = sum([s.overall for s in surveys])/float(len(surveys))
+    avg_service = sum([s.service for s in surveys])/float(len(surveys))
+    return render_to_response('massage/data.html',
+                              {'surveys': surveys,
+                               'count': len(surveys)},
+                              context_instance=RequestContext(request))
