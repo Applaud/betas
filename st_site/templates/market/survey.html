@@ -1,12 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <link rel="stylesheet" href="{{ STATIC_URL }}/coffeeandstyle.css" type="text/css" />
-    <title>Coffee&</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}/obexers.css" type="text/css" />
+    <title>Obexer's Market</title>
   </head>
   <body>
-    <div class="coffeeandstyle">
-      <!-- <img src="{{ STATIC_URL }}/coffeeandlogo.png" alt="logo" /> -->
+    <div class="obexers">
+      <img src="{{ STATIC_URL }}/Obexers.gif" alt="logo" />
+      <h1> Obexer's Market </h1>
       <p>We would love your feedback! <br />
 	Please take a minute to answer these questions.</p>
       {% if errors %}
@@ -24,6 +25,7 @@
 	</div>
 	<div class="field">
 	  <label for="id_reason">What did you come in for today?</label>
+	  <br />
 	  {% for radio in form.reason %}
 	  <div class="radio">
 	    {{ radio }}
@@ -40,6 +42,7 @@
 	</div>
  	<div class="field">
 	  <label for="id_beer">Did you know we offer draft beer & wine by the glass?</label>
+	  <br />
 	  {% for radio in form.beer %}
 	  <div class="radio">
 	    {{ radio }}

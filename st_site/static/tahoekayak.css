@@ -3,7 +3,7 @@ html, body {
     color:#331111;
     font-family:Copperplate, Verdana, serif;
     font-size:20px;
-    background-color:rgb(225, 9, 22);
+    background-color:rgb(225,9,21);
     height:100%;
     margin-top:0px;
 }
@@ -23,7 +23,7 @@ html, body {
     border-left-style:solid;
     border-right-style:solid;    
     border-color:#00000;
-    background-color:rgb(204,201,194);
+    background-color:rgb(255,255,255);
 }
 
 .button {
@@ -67,4 +67,9 @@ html, body {
     border-style:solid;
     border-color:#00000;
     background-color:#ca9665;
+}
+
+#image{
+    text-align:center;
+    width:600px;
 }

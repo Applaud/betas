@@ -11,7 +11,7 @@ class TahoeKayakSurvey(models.Model):
 
 class TahoeKayakSurveyForm(forms.ModelForm):
     choice_list = [(x, x) for x in xrange(1,6)]
-    favorite = forms.CharField(widget=forms.Textarea)
+    favorite = forms.CharField()
     enjoyable = forms.ChoiceField(choices=choice_list,
                                   widget=forms.RadioSelect,
                                   initial=3)

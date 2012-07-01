@@ -6,7 +6,7 @@
   </head>
   <body>
     <div class="tahoestyle">
-      <img src="{{ STATIC_URL }}/tahoekayak_resize.jpg" alt="logo" />
+      <img src="{{ STATIC_URL }}/tahoekayak_resize.jpg" alt="logo" id="image" />
       <p>We would love your feedback! <br />
 	Please take a minute to answer these questions.</p>
       {% if errors %}
@@ -22,6 +22,7 @@
 	  (1 -- poor, 2 -- fair, 3 -- satisfactory, 4 -- good, 5 -- excellent)</p>
 	<div class="field">
 	  <label for="id_enjoyable">Was your tour enjoyable?</label>
+	  <br />
 	  {% for radio in form.enjoyable %}
 	  <div class="radio">
 	    {{ radio }}
@@ -30,6 +31,7 @@
 	</div>
 	<div class="field">
 	  <label for="id_guide">Was your guide helpful and courteous?</label>
+	  <br />
 	  {% for radio in form.guide %}
 	  <div class="radio">
 	    {{ radio }}
@@ -38,6 +40,7 @@
 	</div>
 	<div class="field">
 	  <label for="id_booking">Was your booking experience easy and pleasant?</label>
+	  <br />
 	  {% for radio in form.booking %}
 	  <div class="radio">
 	    {{ radio }}
@@ -46,6 +49,7 @@
 	</div>
 	<div class="field">
 	  <label for="id_transport">If transportation was provided, was it satisfactory?</label>
+	  <br />
 	  {% for radio in form.transport %}
 	  <div class="radio">
 	    {{ radio }}

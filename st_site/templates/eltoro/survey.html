@@ -1,36 +1,50 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <link rel="stylesheet" href="{{ STATIC_URL }}/coffeeandstyle.css" type="text/css" />
-    <title>El Toro </title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}/eltorostyle.css" type="text/css" />
+    <title>El Toro Bravo </title>
   </head>
   <body>
-<h1>El Toro </h1>
-   <form action="" method="post"> 
-    <div class="eltoro">
-      <label for="marg"> What is your favourite margarita? </label>
-      {{ form.margarita }}
+    <div class="image">
+      
+    </div>
+    <div class="eltorostyle">  
+
+     <img src="{{ STATIC_URL }}/eltorologo.png" alt="logo" id="image" />
+     <br />
+     <p>We would love your feedback! <br />
+       Please take a minute to answer these questions.</p>
+     <form action="" method="post"> 
+         <label for="marg"> What is your favourite margarita? </label>
+	 <br />
+	 {{ form.margarita }}
+      <br />
       <br />
       <label for="missing">What is one thing on our menu we are missing? </label> 
       <br />
       {{ form.missing }}
       <br />
+      <br />
       <label for="best"> What was the best and worst part of your visit? </label>
       <br />
       {{ form.best }}
+      <br />
       <br />
       <label for="beer"> What beer would you like to see on our list? </label>
       <br />
       {{ form.beer }}
       <br />
+      <br />
       <label for="time"> How long have you been visiting our restaurant? </label>
       <br />
       {{ form.time }}
+      <br />
       <br />
       <label for="place"> Where are you visiting from? </label>
       <br />
       {{ form.place }}
       
+      <br />
       <input type="submit" value="Submit" class="button" />
       </div>
       </form> 

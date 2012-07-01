@@ -10,6 +10,13 @@ class EltoroSurvey(models.Model):
     place = models.TextField()
 
 class EltoroSurveyForm(forms.ModelForm):
+    margarita = forms.CharField()
+    missing  = forms.CharField()
+    best = forms.CharField()
+    beer = forms.CharField()
+    time  = forms.CharField()
+    place = forms.CharField()
+    
     class Meta:
         model = EltoroSurvey
 
